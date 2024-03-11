@@ -8,7 +8,6 @@ export default async function RootLayout({ children }) {
         <div className="container">
           <div className="main">
             <Sidebar />
-            <p>222</p>
             <section className="col note-viewer">{children}</section>
           </div>
         </div>
