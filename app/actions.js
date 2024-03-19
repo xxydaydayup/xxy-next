@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import { addNote, updateNote, delNote } from "@/lib/redis";
 import { revalidatePath } from "next/cache";
+import { sleep } from "@/lib/utils";
 
 import { z } from "zod";
 
@@ -10,8 +11,6 @@ const schema = z.object({
   title: z.string(),
   content: z.string().min(1, "请填写内容").max(100, "字数最多 100"),
 });
-
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 export async function saveNote(prevState, formData) {
   // 获取 noteId

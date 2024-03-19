@@ -1,5 +1,6 @@
 import Note from "@/components/Note";
 import { getNote } from "@/lib/redis";
+import { sleep } from "@/lib/utils";
 
 export default async function Page({ params }) {
   // 动态路由 获取笔记 id
@@ -7,8 +8,7 @@ export default async function Page({ params }) {
   const note = await getNote(noteId);
 
   // 为了让 Suspense 的效果更明显
-  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-  await sleep(10000);
+  await sleep(3000);
 
   if (note == null) {
     return (
