@@ -3,7 +3,9 @@
     "paths": {
       // "@/*": ["./*"],
       "@/components/*": ["./components/*"],
-      "@/lib/*": ["./lib/*"]
+      "@/actions": ["./app/actions.js"],
+      "@/lib/*": ["./lib/*"],
+      "auth": ["./auth"]
     }
   }
 }
