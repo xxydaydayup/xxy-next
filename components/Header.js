@@ -28,6 +28,7 @@ function SignOut(props) {
 
 export default async function Header() {
   const session = await auth();
+  // console.log("session31==>", session);
   return (
     <header style={{ display: "flex", justifyContent: "space-around" }}>
       {session?.user ? (
